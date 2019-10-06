@@ -1,4 +1,4 @@
-// basic settings
+// settings
 var svgWidth = 800;
 var svgHeight = 500;
 
@@ -59,7 +59,7 @@ d3.csv("/assets/data/data.csv").then(function(myData) {
         .style("font-size", "18px")
         .call(leftAxis);
   
-    // do the circles
+    // circles
     chartGroup.selectAll("circle")
         .data(myData)
         .enter()
@@ -70,7 +70,7 @@ d3.csv("/assets/data/data.csv").then(function(myData) {
         .attr("fill", "blue")
         .attr("opacity", ".3");
 
-    // text in circles
+    // text with in circles
     chartGroup.selectAll("text.text-circles")
         .data(myData)
         .enter()
@@ -83,7 +83,7 @@ d3.csv("/assets/data/data.csv").then(function(myData) {
         .attr("text-anchor","middle")
         .attr("font-size","12px");
 
-    // y axis
+    // set y axis
     chartGroup.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 30 - margin.left)
@@ -92,7 +92,7 @@ d3.csv("/assets/data/data.csv").then(function(myData) {
         .classed("aText", true)
         .text("Lacking Healthcare (%)");
 
-    // x axis
+    // set x axis
     chartGroup.append("text")
         .attr("y", height + margin.bottom/2 - 10)
         .attr("x", width / 2)
